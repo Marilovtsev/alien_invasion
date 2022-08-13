@@ -22,3 +22,8 @@ class AlienInvasion:
 
             # Відображення останнього промальованного екрану.
             pygame.display.flip()
+
+if __name__ == '__main__':
+    #Створення екземпляра та запуск гри.
+    ai = AlienInvasion()
+    ai.run_game()
