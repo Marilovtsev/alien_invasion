@@ -26,7 +26,7 @@ class AlienInvasion:
                     sys.exit()
 
             # При кожному проході циклу екран перемальовуєтся
-            self.screen.fill(self.bg_color)
+            self.screen.fill(self.settings.bg_color)
 
             # Відображення останнього промальованного екрану.
             pygame.display.flip()
