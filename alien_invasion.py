@@ -1,6 +1,8 @@
 import sys
 import pygame
 
+from settings import Settings
+
 
 class AlienInvasion:
     """Клас для керування ресурсами та поведінкою гри"""
@@ -8,6 +10,10 @@ class AlienInvasion:
     def __init__(self):
         """Ініціалізує гру і створює игрові ресурси"""
         pygame.init()
+        self.settings = Settings()
+
+        self.screen = pygame.display.set_mode(
+            (self.settings.screen_width, self.settings.screen_height))
 
         self.screen = pygame.display.set_mode((1200, 800))
         pygame.display.set_caption("Alien Invasion")
