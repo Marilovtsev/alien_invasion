@@ -13,3 +13,7 @@ class Ship():
         self.rect = self.image.get_rect()
         #Кожен новий корабель з'ялвяється у нижньому куті екрану
         self.rect.midbottom = self.screen_rect.midbottom
+
+    def blitme(self):
+        """Малює корабель у нинішній позиції"""
+        self.screen.blit(self.image, self.rect)
