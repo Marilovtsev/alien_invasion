@@ -11,7 +11,9 @@ class Ship():
 
         # Завантажує зображення корабля та отримує прямокутник
         self.image = pygame.image.load('images/ship.bmp')
+        self.image.set_colorkey((230, 230, 230))
         self.rect = self.image.get_rect()
+
         # Кожен новий корабель з'ялвяється у нижньому куті екрану
         self.rect.midbottom = self.screen_rect.midbottom
 
