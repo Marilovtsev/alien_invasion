@@ -27,7 +27,7 @@ class AlienInvasion:
         #При кожному проході циклу екран перемальовуєтся
 
     def _check_events(self):
-            """Відстеження подій клавіатури та миші"""
+            """Обробляє натискання клавіатури та події миші"""
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
