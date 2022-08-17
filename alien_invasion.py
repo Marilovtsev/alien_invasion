@@ -24,20 +24,21 @@ class AlienInvasion:
         """Запуск основного циклу гри"""
         while True:
             self._check_events()
-        #При кожному проході циклу екран перемальовуєтся
+            self._update_screen()
+        # При кожному проході циклу екран перемальовуєтся
 
     def _check_events(self):
-            """Обробляє натискання клавіатури та події миші"""
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
+        """Обробляє натискання клавіатури та події миші"""
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
 
-            # При кожному проході циклу екран перемальовуєтся
-            self.screen.fill(self.settings.bg_color)
-            self.ship.blitme()
+    def _update_screen(self):
+        """Оновлює зображення на екрані та відображає новий екран"""
+        self.screen.fill(self.settings.bg_color)
+        self.ship.blitme()
 
-            # Відображення останнього промальованного екрану.
-            pygame.display.flip()
+        pygame.display.flip()
 
 
 if __name__ == '__main__':
