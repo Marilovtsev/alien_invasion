@@ -23,7 +23,11 @@ class AlienInvasion:
     def run_game(self):
         """Запуск основного циклу гри"""
         while True:
-            # Відстеження подій клавіатури та миші
+            self._check_events()
+        #При кожному проході циклу екран перемальовуєтся
+
+    def _check_events(self):
+            """Відстеження подій клавіатури та миші"""
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
