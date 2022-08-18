@@ -7,8 +7,9 @@ class Ship():
     def __init__(self, ai_game):
         """Ініціалізує корабель та задає його початкову позицію"""
         self.screen = ai_game.screen
-        # self.screen_rect = ai_game.screen.get_rect()
         self.settings = ai_game.settings
+        self.screen_rect = ai_game.screen.get_rect()
+
 
         # Завантажує зображення корабля та отримує прямокутник
         self.image = pygame.image.load('images/ship.bmp')
@@ -18,22 +19,22 @@ class Ship():
         # Кожен новий корабель з'ялвяється у нижньому куті екрану
         self.rect.midbottom = self.screen_rect.midbottom
 
-        #Зберігання речової координати центру корабля
+        # Зберігання речової координати центру корабля
         self.x = float(self.rect.x)
 
-        #Флаг переміщення
+        # Флаг переміщення
         self.moving_right = False
         self.moving_left = False
 
     def update(self):
         """Оновлює позицію корабля з урахуванням флагів"""
-        #Оновлює атрибут х, не rect
+        # Оновлює атрибут х, не rect
         if self.moving_right:
-            self.rect.x += self.settings.ship_speed
+            self.x += self.settings.ship_speed
         if self.moving_left:
-            self.rect.x -= self.settings.ship_speed
+            self.x -= self.settings.ship_speed
 
-        #Оновлення атрибуту rect на основі self.x
+        # Оновлення атрибуту rect на основі self.x
         self.rect.x = self.x
 
     def blitme(self):
