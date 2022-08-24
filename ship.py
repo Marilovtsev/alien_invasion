@@ -10,7 +10,6 @@ class Ship():
         self.settings = ai_game.settings
         self.screen_rect = ai_game.screen.get_rect()
 
-
         # Завантажує зображення корабля та отримує прямокутник
         self.image = pygame.image.load('images/ship.bmp')
         self.image.set_colorkey((230, 230, 230))
