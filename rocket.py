@@ -20,6 +20,7 @@ class Rocket():
 
         # Зберігання речової координати центру корабля
         self.x = float(self.rect.x)
+        self.y = float(self.rect.y)
 
         # Флаг переміщення
         self.moving_right = False
@@ -31,12 +32,17 @@ class Rocket():
         """Оновлює позицію корабля з урахуванням флагів"""
         # Оновлює атрибут х, не rect
         if self.moving_right and self.rect.right < self.screen_rect.right:
-            self.x += self.settings.ship_speed
+            self.x += self.settings.rocket_speed
         if self.moving_left and self.rect.left > 0:
-            self.x -= self.settings.ship_speed
+            self.x -= self.settings.rocket_speed
+        if self.moving_up and self.rect.up < self.screen_rect.up:
+            self.y += self.settings.rocket_speed
+        if self.moving_down and self.rect.down > 0:
+            self.y -= self.settings.rocket_speed
 
         # Оновлення атрибуту rect на основі self.x
         self.rect.x = self.x
+        self.rect.y = self.y
 
     def blitme(self):
         """Малює корабель у нинішній позиції"""
