@@ -24,6 +24,8 @@ class Rocket():
         # Флаг переміщення
         self.moving_right = False
         self.moving_left = False
+        self.moving_up = False
+        self.moving_down = False
 
     def update(self):
         """Оновлює позицію корабля з урахуванням флагів"""
