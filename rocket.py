@@ -12,7 +12,7 @@ class Rocket():
 
         # Завантажує зображення корабля та отримує прямокутник
         self.image = pygame.image.load('images/spacecraft-g5e4182639_640.bmp')
-        self.image.set_colorkey((230, 230, 230))
+        self.image.set_colorkey((255, 255, 255))
         self.rect = self.image.get_rect()
 
         # Кожен новий корабель з'ялвяється у нижньому куті екрану
