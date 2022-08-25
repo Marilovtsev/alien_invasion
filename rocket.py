@@ -22,7 +22,7 @@ class Rocket():
 
         # Завантажує зображення корабля та отримує прямокутник
 
-        self.image.set_colorkey((255, 255, 255))
+        # self.image.set_colorkey((255, 255, 255))
 
     def update(self):
         """Оновлює позицію корабля з урахуванням флагів"""
@@ -33,13 +33,13 @@ class Rocket():
             self.center -= self.ai_settings.rocket_speed
         if self.moving_height and self.rect.top > self.screen_rect.top:
             self.rect.centery -= self.ai_settings.rocket_speed
-        if self.moving_width and self.rect.bottom < self.screen_rect.midbottom:
+        if self.moving_width and self.rect.bottom < self.screen_rect.bottom:
             self.rect.centery += self.ai_settings.rocket_speed
         self.rect.centerx = self.center
 
-        # Оновлення атрибуту rect на основі self.x
-        self.rect.x = self.x
-        self.rect.y = self.y
+        # # Оновлення атрибуту rect на основі self.x
+        # self.rect.x = self.x
+        # self.rect.y = self.y
 
     def blitme(self):
         """Малює корабель у нинішній позиції"""

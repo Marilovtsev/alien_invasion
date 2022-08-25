@@ -18,7 +18,7 @@ class RocketStart:
 
         pygame.display.set_caption("Alien Invasion")
 
-        self.rocket = Rocket(self)
+        self.rocket = Rocket(self, screen=0)
 
     def run_game(self):
         """Запуск основного циклу гри"""
@@ -45,9 +45,9 @@ class RocketStart:
         elif event.key == pygame.K_LEFT:
             self.rocket.moving_left = True
         elif event.key == pygame.K_UP:
-            self.rocket.moving_up = True
+            self.rocket.moving_height = True
         elif event.key == pygame.K_DOWN:
-            self.rocket.moving_down = True
+            self.rocket.moving_width = True
         elif event.key == pygame.K_q:
             sys.exit()
 
