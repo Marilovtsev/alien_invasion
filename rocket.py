@@ -25,8 +25,8 @@ class Rocket():
         # Флаг переміщення
         self.moving_right = False
         self.moving_left = False
-        self.moving_up = False
-        self.moving_down = False
+        self.moving_height = False
+        self.moving_width = False
 
     def update(self):
         """Оновлює позицію корабля з урахуванням флагів"""
@@ -35,10 +35,12 @@ class Rocket():
             self.x += self.settings.rocket_speed
         if self.moving_left and self.rect.left > 0:
             self.x -= self.settings.rocket_speed
-        if self.moving_up and self.rect.up < self.screen_rect.up:
-            self.y += self.settings.rocket_speed
-        if self.moving_down and self.rect.down > 0:
-            self.y -= self.settings.rocket_speed
+        if self.moving_height and self.rect.top > self.screen_rect.top:
+            self.rect.centery -= self.settings.rocket_speed
+        if self.moving_width and self.rect.bottom < self.screen_rect.midbottom:
+            self.rect.centery += self.settings.rocket_speed
+        self.rect.centerx = self.center
+
 
         # Оновлення атрибуту rect на основі self.x
         self.rect.x = self.x
