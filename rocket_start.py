@@ -58,9 +58,9 @@ class RocketStart:
         elif event.key == pygame.K_LEFT:
             self.rocket.moving_left = False
         elif event.key == pygame.K_UP:
-            self.rocket.moving_up = False
+            self.rocket.moving_height = False
         elif event.key == pygame.K_DOWN:
-            self.rocket.moving_down = False
+            self.rocket.moving_width = False
 
     def _update_screen(self):
         """Оновлює зображення на екрані та відображає новий екран"""
