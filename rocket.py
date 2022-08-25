@@ -4,29 +4,25 @@ import pygame
 class Rocket():
     """Класс для керування кораблем"""
 
-    def __init__(self, ai_game):
+    def __init__(self, ai_settings, screen):
         """Ініціалізує корабель та задає його початкову позицію"""
-        self.screen = ai_game.screen
-        self.settings = ai_game.settings
-        self.screen_rect = ai_game.screen.get_rect()
-
-        # Завантажує зображення корабля та отримує прямокутник
+        self.screen = screen
+        self.ai_settings = ai_settings
         self.image = pygame.image.load('images/spacecraft-g5e4182639_640.bmp')
-        self.image.set_colorkey((255, 255, 255))
         self.rect = self.image.get_rect()
-
-        # Кожен новий корабель з'ялвяється у нижньому куті екрану
-        self.rect.midbottom = self.screen_rect.midbottom
-
-        # Зберігання речової координати центру корабля
-        self.x = float(self.rect.x)
-        self.y = float(self.rect.y)
-
-        # Флаг переміщення
+        self.screen_rect = screen.get_rect()
+        self.rect.centerx = self.screen_rect.centerx
+        self.rect.bottom = self.screen_rect.bottom
+        self.center = float(self.rect.centerx)
+        self.cemter = float(self.rect.centery)
         self.moving_right = False
         self.moving_left = False
         self.moving_height = False
         self.moving_width = False
+
+        # Завантажує зображення корабля та отримує прямокутник
+
+        self.image.set_colorkey((255, 255, 255))
 
     def update(self):
         """Оновлює позицію корабля з урахуванням флагів"""
@@ -40,7 +36,6 @@ class Rocket():
         if self.moving_width and self.rect.bottom < self.screen_rect.midbottom:
             self.rect.centery += self.settings.rocket_speed
         self.rect.centerx = self.center
-
 
         # Оновлення атрибуту rect на основі self.x
         self.rect.x = self.x
