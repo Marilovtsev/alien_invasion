@@ -25,17 +25,15 @@ class Rocket:
         self.centery = float(self.rect.centery)
 
 
-        # Завантажує зображення корабля та отримує прямокутник
-
         # self.image.set_colorkey((255, 255, 255))
 
     def update(self):
         """Оновлює позицію корабля з урахуванням флагів"""
         # Оновлює атрибут х, не rect
-        if self.moving_right and self.rect.right < self.screen_rect.right:
-            self.center += self.ai_settings.rocket_speed
         if self.moving_left and self.rect.left > 0:
-            self.center -= self.ai_settings.rocket_speed
+            self.centerx -= self.settings.rocket_speed
+        if self.moving_right and self.rect.right < self.screen_rect.right:
+            self.centerx += self.settings.rocket_speed
         if self.moving_height and self.rect.top > self.screen_rect.top:
             self.rect.centery -= self.ai_settings.rocket_speed
         if self.moving_width and self.rect.bottom < self.screen_rect.bottom:
