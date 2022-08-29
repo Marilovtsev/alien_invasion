@@ -1,24 +1,28 @@
 import pygame
 
 
-class Rocket():
+class Rocket:
     """Класс для керування кораблем"""
 
-    def __init__(self, ai_settings, screen):
+    def __init__(self, settings, screen):
         """Ініціалізує корабель та задає його початкову позицію"""
         self.screen = screen
-        self.ai_settings = ai_settings
+        self.settings = settings
+
         self.image = pygame.image.load('images/spacecraft-g5e4182639_640.bmp')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
-        self.rect.centerx = self.screen_rect.centerx
-        self.rect.bottom = self.screen_rect.bottom
-        self.center = float(self.rect.centerx)
-        self.center = float(self.rect.centery)
+
         self.moving_right = False
         self.moving_left = False
         self.moving_height = False
         self.moving_width = False
+
+        self.rect.centerx = self.screen_rect.centerx
+        self.rect.bottom = self.screen_rect.bottom
+        self.center = float(self.rect.centerx)
+        self.center = float(self.rect.centery)
+
 
         # Завантажує зображення корабля та отримує прямокутник
 
