@@ -15,6 +15,18 @@ def _check_keydown_events(event, rocket):
     # elif event.key == pygame.K_q:
     #     sys.exit()
 
+
+def _check_keyup_events(event, rocket):
+    """Реагує на відпускання клавіш."""
+    if event.key == pygame.K_RIGHT:
+        rocket.moving_right = False
+    if event.key == pygame.K_LEFT:
+        rocket.moving_left = False
+    if event.key == pygame.K_UP:
+        rocket.moving_up = False
+    if event.key == pygame.K_DOWN:
+        rocket.moving_down = False
+
 def _check_events(self):
     """Обробляє натискання клавіатури та події миші"""
     for event in pygame.event.get():
@@ -29,16 +41,6 @@ def _check_events(self):
 
 
 
-def _check_keyup_events(self, event):
-    """Реагує на відпускання клавіш."""
-    if event.key == pygame.K_RIGHT:
-        self.rocket.moving_right = False
-    elif event.key == pygame.K_LEFT:
-        self.rocket.moving_left = False
-    elif event.key == pygame.K_UP:
-        self.rocket.moving_height = False
-    elif event.key == pygame.K_DOWN:
-        self.rocket.moving_width = False
 
 
 def _update_screen(self):
