@@ -18,7 +18,7 @@ class RocketStart:
 
         pygame.display.set_caption("Alien Invasion")
 
-        self.rocket = Rocket(self, screen=0)
+        self.rocket = Rocket(self.screen, self.settings)
 
     def run_game(self):
         """Запуск основного циклу гри"""
