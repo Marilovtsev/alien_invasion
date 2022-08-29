@@ -21,8 +21,8 @@ class Rocket:
         self.rect.centerx = self.screen_rect.centerx
         self.rect.centery = self.screen_rect.centery
 
-        self.center = float(self.rect.centerx)
-        self.center = float(self.rect.centery)
+        self.centerx = float(self.rect.centerx)
+        self.centery = float(self.rect.centery)
 
 
         # Завантажує зображення корабля та отримує прямокутник
