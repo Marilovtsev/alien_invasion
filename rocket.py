@@ -19,7 +19,8 @@ class Rocket:
         self.moving_right = False
 
         self.rect.centerx = self.screen_rect.centerx
-        self.rect.bottom = self.screen_rect.bottom
+        self.rect.centery = self.screen_rect.centery
+
         self.center = float(self.rect.centerx)
         self.center = float(self.rect.centery)
 
