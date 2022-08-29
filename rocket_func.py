@@ -2,7 +2,7 @@ import sys
 import pygame
 
 
-def _check_keydown_events(event, rocket):
+def check_keydown_events(event, rocket):
     """Реагує на натискання клавіш."""
     if event.key == pygame.K_RIGHT:
         rocket.moving_right = True
@@ -16,7 +16,7 @@ def _check_keydown_events(event, rocket):
     #     sys.exit()
 
 
-def _check_keyup_events(event, rocket):
+def check_keyup_events(event, rocket):
     """Реагує на відпускання клавіш."""
     if event.key == pygame.K_RIGHT:
         rocket.moving_right = False
@@ -27,25 +27,20 @@ def _check_keyup_events(event, rocket):
     if event.key == pygame.K_DOWN:
         rocket.moving_down = False
 
-def _check_events(self):
+
+def check_events(rocket):
     """Обробляє натискання клавіатури та події миші"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
         elif event.type == pygame.KEYDOWN:
-            self._check_keydown_events(event)
+            check_keydown_events(event, rocket)
         elif event.type == pygame.KEYUP:
-            self._check_keyup_events(event)
+            check_keyup_events(event, rocket)
 
 
-
-
-
-
-
-def _update_screen(self):
+def update_screen(settings, screen, rocket):
     """Оновлює зображення на екрані та відображає новий екран"""
-    self.screen.fill(self.settings.bg_color)
-    self.rocket.blitme()
-
+    screen.fill(settings.bg_color)
+    rocket.blitme()
     pygame.display.flip()
