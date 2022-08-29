@@ -9,4 +9,4 @@ class Settings():
         self.bg_color = (15, 200, 250)
 
         # Ship settings
-        self.rocket_speed = 1.5
+        self.rocket_speed = 1.2
