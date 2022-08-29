@@ -19,4 +19,5 @@ def run_game():
         rocket.update()
         func.update_screen(settings, screen, rocket)
 
+
 run_game()
