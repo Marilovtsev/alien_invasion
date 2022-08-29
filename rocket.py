@@ -24,8 +24,7 @@ class Rocket:
         self.centerx = float(self.rect.centerx)
         self.centery = float(self.rect.centery)
 
-
-        # self.image.set_colorkey((255, 255, 255))
+        self.image.set_colorkey((255, 255, 255))
 
     def update(self):
         """Оновлює позицію корабля з урахуванням флагів"""
@@ -38,7 +37,6 @@ class Rocket:
             self.centery -= self.settings.rocket_speed
         if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
             self.centery += self.settings.rocket_speed
-
 
         self.rect.centerx = self.centerx
         self.rect.centery = self.centery
