@@ -40,7 +40,8 @@ class Rocket:
             self.rect.centery += self.settings.rocket_speed
 
 
-        self.rect.centerx = self.center
+        self.rect.centerx = self.centerx
+        self.rect.centery = self.centery
 
         # # Оновлення атрибуту rect на основі self.x
         # self.rect.x = self.x
