@@ -34,10 +34,12 @@ class Rocket:
             self.centerx -= self.settings.rocket_speed
         if self.moving_right and self.rect.right < self.screen_rect.right:
             self.centerx += self.settings.rocket_speed
-        if self.moving_height and self.rect.top > self.screen_rect.top:
-            self.rect.centery -= self.ai_settings.rocket_speed
-        if self.moving_width and self.rect.bottom < self.screen_rect.bottom:
-            self.rect.centery += self.ai_settings.rocket_speed
+        if self.moving_up and self.rect.top > 0:
+            self.rect.centery -= self.settings.rocket_speed
+        if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
+            self.rect.centery += self.settings.rocket_speed
+
+
         self.rect.centerx = self.center
 
         # # Оновлення атрибуту rect на основі self.x
