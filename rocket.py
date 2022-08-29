@@ -35,9 +35,9 @@ class Rocket:
         if self.moving_right and self.rect.right < self.screen_rect.right:
             self.centerx += self.settings.rocket_speed
         if self.moving_up and self.rect.top > 0:
-            self.rect.centery -= self.settings.rocket_speed
+            self.centery -= self.settings.rocket_speed
         if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
-            self.rect.centery += self.settings.rocket_speed
+            self.centery += self.settings.rocket_speed
 
 
         self.rect.centerx = self.centerx
