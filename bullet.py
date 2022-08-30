@@ -20,3 +20,10 @@ class Bullet(Sprite):
         # The position of the bullet is stored in real format.
         self.y = float(self.rect.y)
 
+    def update(self):
+        """Moves the bullet up the screen."""
+        # Bullet position update in real format
+        self.y -= self.settings.bullet_speed
+
+        # Update the position of the rectangle.
+        self.rect.y = self.y
