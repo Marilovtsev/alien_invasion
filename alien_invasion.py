@@ -68,8 +68,10 @@ class AlienInvasion:
         """Оновлює зображення на екрані та відображає новий екран"""
         self.screen.fill(self.settings.bg_color)
         self.ship.blitme()
+        for bullet in self.bullets.sprites():
+            bullet.draw_bullet()
 
-        pygame.display.flip()
+    pygame.display.flip()
 
 
 if __name__ == '__main__':
