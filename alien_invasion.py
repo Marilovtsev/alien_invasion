@@ -37,7 +37,6 @@ class AlienInvasion:
 
             self._update_screen()
 
-
     def _check_events(self):
         """Обробляє натискання клавіатури та події миші"""
         for event in pygame.event.get():
