@@ -67,8 +67,9 @@ class AlienInvasion:
 
     def _fire_bullet(self):
         """Create a new bullet and include it in the bullets group."""
-        new_bullet = Bullet(self)
-        self.bullets.add(new_bullet)
+        if len(self.bullets) < self.settings.bullet_allowed:
+            new_bullet = Bullet(self)
+            self.bullets.add(new_bullet)
 
     def _update_screen(self):
         """Оновлює зображення на екрані та відображає новий екран"""
