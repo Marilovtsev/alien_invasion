@@ -27,12 +27,8 @@ class AlienInvasion:
         while True:
             self._check_events()
             self.ship.update()
-            self.bullets.update()
+            self._update_bullets()
 
-            # Removing projectiles that have gone off the edge of the screen.
-            for bullet in self.bullets.copy():
-                if bullet.rect.bottom <= 0:
-                    self.bullets.remove(bullet)
             # print(len(self.bullets))
 
             self._update_screen()
@@ -70,6 +66,16 @@ class AlienInvasion:
         if len(self.bullets) < self.settings.bullet_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
+
+    def _update_bullets(self):
+        """Оновлює позиції снарядів та знищує старі снаряди"""
+        #Updated projectile positions.
+        self.bullets.update()
+
+        # Removing projectiles that have gone off the edge of the screen.
+        for bullet in self.bullets.copy():
+            if bullet.rect.bottom <= 0:
+                self.bullets.remove(bullet)
 
     def _update_screen(self):
         """Оновлює зображення на екрані та відображає новий екран"""
