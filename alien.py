@@ -17,3 +17,6 @@ class Alien(Sprite):
         #Кожен новий прибулець з'являється у лівому верхньому куті екрану.
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
+
+        #Закріплення точної горизонтальної позиції прибульця.
+        self.x = float(self.rect.x)
