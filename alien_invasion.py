@@ -83,6 +83,9 @@ class AlienInvasion:
 
     def _create_fleet(self):
         """Створення флоту вторгнення"""
+        # створення прибульця
+        alien = Alien(self)
+        self.aliens.add(alien)
 
     def _update_screen(self):
         """Оновлює зображення на екрані та відображає новий екран"""
