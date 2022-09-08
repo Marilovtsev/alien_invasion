@@ -12,6 +12,7 @@ class Alien(Sprite):
 
         # Завантаження зображення прибульця та призначення атрибуту rect.
         self.image = pygame.image.load('images/alien.bmp')
+        self.image.set_colorkey((230, 230, 230))
         self.rect = self.image.get_rect()
 
         # Кожен новий прибулець з'являється у лівому верхньому куті екрану.
