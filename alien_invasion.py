@@ -24,6 +24,8 @@ class AlienInvasion:
         self.bullets = pygame.sprite.Group()
         self.aliens = pygame.sprite.Group()
 
+        self._create_fleet()
+
     def run_game(self):
         """Запуск основного циклу гри"""
         while True:
@@ -71,7 +73,7 @@ class AlienInvasion:
 
     def _update_bullets(self):
         """Оновлює позиції снарядів та знищує старі снаряди"""
-        #Updated projectile positions.
+        # Updated projectile positions.
         self.bullets.update()
 
         # Removing projectiles that have gone off the edge of the screen.
