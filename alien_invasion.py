@@ -83,9 +83,12 @@ class AlienInvasion:
 
     def _create_fleet(self):
         """Створення флоту вторгнення"""
-        # створення прибульця
+        # створення прибульця та вирахування кількості прибульців в ряді
+        # нтервал муж сусідніми прибульцями дорівнює ширині прибульця
         alien = Alien(self)
-        self.aliens.add(alien)
+        alien_width = alien.rect.width
+        available_space_x = self.settings.screen_width - (2 * alien_width)
+        number_aliens_x = available_space_x // (2 * alien_width)
 
     def _update_screen(self):
         """Оновлює зображення на екрані та відображає новий екран"""
