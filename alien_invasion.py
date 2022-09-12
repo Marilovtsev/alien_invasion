@@ -90,6 +90,10 @@ class AlienInvasion:
         available_space_x = self.settings.screen_width - (2 * alien_width)
         number_aliens_x = available_space_x // (2 * alien_width)
 
+        # Створення першого ряду прибульців
+        for alien_number in range(number_aliens_x):
+            #
+
     def _update_screen(self):
         """Оновлює зображення на екрані та відображає новий екран"""
         self.screen.fill(self.settings.bg_color)
