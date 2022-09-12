@@ -92,7 +92,12 @@ class AlienInvasion:
 
         # Створення першого ряду прибульців
         for alien_number in range(number_aliens_x):
-            #
+
+            # Створення прибульця та розміщення його у ряду
+            alien = Alien(self)
+            alien.x = alien_width + 2 * alien_width * alien_number
+            alien.rect.x = alien.x
+            self.aliens.add(alien)
 
     def _update_screen(self):
         """Оновлює зображення на екрані та відображає новий екран"""
