@@ -102,10 +102,10 @@ class AlienInvasion:
             for alien_number in range(number_aliens_x):
                 self._create_alien(alien_number, row_number)
 
-    def _create_alien(self, alien_number):
+    def _create_alien(self, alien_number, row_number):
         """Створення прибульця та розміщення його у ряду"""
         alien = Alien(self)
-        alien_width = alien.rect.width
+        alien_width, alien_height = alien.rect.size
         alien.x = alien_width + 2 * alien_width * alien_number
         alien.rect.x = alien.x
         self.aliens.add(alien)
