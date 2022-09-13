@@ -97,6 +97,11 @@ class AlienInvasion:
                              (3 * alien_height) - ship_height)
         number_rows = available_space_y // (2 * alien_height)
 
+        # Створення флоту вторгення.
+        for row_number in range(number_rows):
+            for alien_number in range(number_aliens_x):
+                self._create_alien(alien_number, row_number)
+
     def _create_alien(self, alien_number):
         """Створення прибульця та розміщення його у ряду"""
         alien = Alien(self)
