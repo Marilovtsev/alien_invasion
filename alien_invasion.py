@@ -86,13 +86,16 @@ class AlienInvasion:
         # створення прибульця та вирахування кількості прибульців в ряді
         # нтервал муж сусідніми прибульцями дорівнює ширині прибульця
         alien = Alien(self)
+        alien_width, alien_height = alien.rect.size
         alien_width = alien.rect.width
         available_space_x = self.settings.screen_width - (2 * alien_width)
         number_aliens_x = available_space_x // (2 * alien_width)
 
-        # Створення першого ряду прибульців
-        for alien_number in range(number_aliens_x):
-            self._create_alien(alien_number)
+        """Визначає кількість рядів, що помістяться на екрані"""
+        ship_height = self.ship.rect.height
+        available_space_y = (self.settings.screen_height -
+                             (3 * alien_height) - ship_height)
+        number_rows = available_space_y // (2 * alien_height)
 
     def _create_alien(self, alien_number):
         """Створення прибульця та розміщення його у ряду"""
