@@ -121,7 +121,7 @@ class AlienInvasion:
         """реагує на досягнення прибульцем краю екрана"""
         for alien in self.aliens.sprites():
             if alien.check_edges():
-                self.change_fleet_direction()
+                self._change_fleet_direction()
                 break
 
     def _change_fleet_direction(self):
