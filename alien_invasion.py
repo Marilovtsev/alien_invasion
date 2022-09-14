@@ -82,7 +82,9 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
 
-
+    def _update_aliens(self):
+        """Оновлює позиції усіх прибульців у флоті"""
+        self.aliens.update()
 
     def _create_fleet(self):
         """Створення флоту вторгнення"""
