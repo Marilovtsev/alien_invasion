@@ -8,6 +8,7 @@ class Alien(Sprite):
     def __init__(self, ai_game):
         """Ініціалізує прибульця та задає його початкову позицію."""
         super().__init__()
+        self.settings = None
         self.screen = ai_game.screen
         self.screen = ai_game.settings
 
@@ -23,16 +24,14 @@ class Alien(Sprite):
         # Закріплення точної горизонтальної позиції прибульця.
         self.x = float(self.rect.x)
 
-
-    def chek_edges(self):
+    def check_edges(self):
         """Повертає True якщо прибулець знаходиться біля краю екрана"""
         screen_rect = self.screen.get_rect()
-        if self.rect.right >= screen_rect or self.rect.left <= 0:
+        if self.rect.right >= screen_rect.right or self.rect.left <= 0:
             return True
-
 
     def update(self):
         """Переміщує прибульця вліо і вправо"""
         self.x += (self.settings.alien_speed *
-                self.settings.fleet_direction)
+                   self.settings.fleet_direction)
         self.rect.x = self.x

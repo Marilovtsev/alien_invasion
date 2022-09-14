@@ -140,6 +140,9 @@ class AlienInvasion:
 
         pygame.display.flip()
 
+    def change_fleet_direction(self):
+        pass
+
 
 if __name__ == '__main__':
     # Створення екземпляра та запуск гри.
