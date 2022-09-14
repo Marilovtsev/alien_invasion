@@ -10,6 +10,7 @@ class Alien(Sprite):
         super().__init__()
         self.screen = ai_game.screen
 
+
         # Завантаження зображення прибульця та призначення атрибуту rect.
         self.image = pygame.image.load('images/alien.bmp')
         self.image.set_colorkey((230, 230, 230))
