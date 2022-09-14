@@ -84,6 +84,7 @@ class AlienInvasion:
 
     def _update_aliens(self):
         """Оновлює позиції усіх прибульців у флоті"""
+        self._check_fleet_edges()
         self.aliens.update()
 
     def _create_fleet(self):
