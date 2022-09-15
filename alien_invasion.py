@@ -22,6 +22,8 @@ class AlienInvasion:
             (self.settings.screen_width, self.settings.screen_height))
 
         pygame.display.set_caption("Alien Invasion")
+        # Створення екземпляру для зберігання ігрової статистики.
+        self.stats = GameStats(self)
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
