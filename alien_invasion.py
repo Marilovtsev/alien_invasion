@@ -110,6 +110,13 @@ class AlienInvasion:
         if pygame.sprite.spritecollideany(self.ship, self.aliens):
             print('Ship hit!!!')
 
+    def _ship_hit(self):
+        """Обробляємозіткнення коробля з прибульцем."""
+        # Зменшення ship_left.
+        self.stats.ships_left -= 1
+
+
+
     def _create_fleet(self):
         """Створення флоту вторгнення"""
         # створення прибульця та вирахування кількості прибульців в ряді
