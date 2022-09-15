@@ -123,6 +123,9 @@ class AlienInvasion:
         self._create_fleet()
         self.ship.center_ship()
 
+        # Пауза
+        sleep(0.5)
+
     def _create_fleet(self):
         """Створення флоту вторгнення"""
         # створення прибульця та вирахування кількості прибульців в ряді
