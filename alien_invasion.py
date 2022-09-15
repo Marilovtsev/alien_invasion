@@ -115,7 +115,9 @@ class AlienInvasion:
         # Зменшення ship_left.
         self.stats.ships_left -= 1
 
-
+        # Очистка списків прибульців та снарядів
+        self.aliens.empty()
+        self.bullets.empty()
 
     def _create_fleet(self):
         """Створення флоту вторгнення"""
