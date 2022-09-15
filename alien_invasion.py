@@ -119,6 +119,10 @@ class AlienInvasion:
         self.aliens.empty()
         self.bullets.empty()
 
+        # Створення нового флоту та розміщення корабля по центру
+        self._create_fleet()
+        self.ship.center_ship()
+
     def _create_fleet(self):
         """Створення флоту вторгнення"""
         # створення прибульця та вирахування кількості прибульців в ряді
