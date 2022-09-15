@@ -5,3 +5,7 @@ class GameStats():
         """Ініціалізує статистику."""
         self.settings = ai_game.settings
         self.reset_stats()
+
+    def reset_stats(self):
+        """Ініціалізує статистику, яка змінюється під час гри."""
+        self.ships_left = self.settings.ship_limit
