@@ -82,6 +82,9 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
 
+        self._check_bullet_alien_collisions()
+
+    def _check_bullet_alien_collisions(self):
         # Перевірка попадань у прибульців.
         # При виявленні попадання видалити снаряд та прибульця
         collisions = pygame.sprite.groupcollide(self.bullets,
