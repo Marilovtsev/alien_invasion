@@ -88,6 +88,11 @@ class AlienInvasion:
                                                 self.aliens,
                                                 True, True)
 
+        if not self.aliens:
+            # Знищення існуючих снарядів та створення нового флоту
+            self.bullets.empty()
+            self._create_fleet()
+
     def _update_aliens(self):
         """Оновлює позиції усіх прибульців у флоті"""
         self._check_fleet_edges()
