@@ -182,6 +182,14 @@ class AlienInvasion:
     def change_fleet_direction(self):
         pass
 
+    def _check_aliens_bottom(self):
+        """Перевіряє, дістались прибульці до нижнього краю екрану"""
+        screen_rect = self.screen.get_rect()
+        for alien in self.aliens.sprites():
+            if alien.rect.bottom >= screen_rect.bottom:
+        # Виникає те саме, що й при зіткненні з кораблем.
+                self._ship_hit()
+                break
 
 if __name__ == '__main__':
     # Створення екземпляра та запуск гри.
