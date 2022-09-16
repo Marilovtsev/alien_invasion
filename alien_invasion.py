@@ -110,6 +110,9 @@ class AlienInvasion:
         if pygame.sprite.spritecollideany(self.ship, self.aliens):
             self._ship_hit()
 
+        # Перевірити, дістались прибульці до нижнього краю екрана
+        self._check_aliens_bottom()
+
     def _ship_hit(self):
         """Обробляємозіткнення коробля з прибульцем."""
         # Зменшення ship_left.
