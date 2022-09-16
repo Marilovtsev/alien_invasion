@@ -5,6 +5,8 @@ class GameStats():
         """Ініціалізує статистику."""
         self.settings = ai_game.settings
         self.reset_stats()
+        # Гра Alien Invasion запускається в активному стані
+        self.game_active = True
 
     def reset_stats(self):
         """Ініціалізує статистику, яка змінюється під час гри."""
