@@ -35,9 +35,11 @@ class AlienInvasion:
         """Запуск основного циклу гри"""
         while True:
             self._check_events()
-            self.ship.update()
-            self._update_bullets()
-            self._update_aliens()
+
+            if self.stats.game_active:
+                self.ship.update()
+                self._update_bullets()
+                self._update_aliens()
 
             # print(len(self.bullets))
 
@@ -193,9 +195,10 @@ class AlienInvasion:
         screen_rect = self.screen.get_rect()
         for alien in self.aliens.sprites():
             if alien.rect.bottom >= screen_rect.bottom:
-        # Виникає те саме, що й при зіткненні з кораблем.
+                # Виникає те саме, що й при зіткненні з кораблем.
                 self._ship_hit()
                 break
+
 
 if __name__ == '__main__':
     # Створення екземпляра та запуск гри.

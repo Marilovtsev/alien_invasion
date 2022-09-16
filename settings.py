@@ -8,7 +8,7 @@ class Settings():
         self.screen_height = 800
         self.bg_color = (0, 30, 80)
         self.bullet_allowed = 3
-        self.alien_speed = 0.5
+        self.alien_speed = 1
         self.fleet_drop_speed = 10
         # fleet direction = 1 означає рух вправо; f -1 - вліво
         self.fleet_direction = 1
