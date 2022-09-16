@@ -115,19 +115,22 @@ class AlienInvasion:
 
     def _ship_hit(self):
         """Обробляємозіткнення коробля з прибульцем."""
-        # Зменшення ship_left.
-        self.stats.ships_left -= 1
+        if self.stats.ships_left > 0:
+            # Зменшення ship_left.
+            self.stats.ships_left -= 1
 
-        # Очистка списків прибульців та снарядів
-        self.aliens.empty()
-        self.bullets.empty()
+            # Очистка списків прибульців та снарядів
+            self.aliens.empty()
+            self.bullets.empty()
 
-        # Створення нового флоту та розміщення корабля по центру
-        self._create_fleet()
-        self.ship.center_ship()
+            # Створення нового флоту та розміщення корабля по центру
+            self._create_fleet()
+            self.ship.center_ship()
 
-        # Пауза
-        sleep(0.5)
+            # Пауза
+            sleep(0.5)
+        else:
+            self.stats.game_active = False
 
     def _create_fleet(self):
         """Створення флоту вторгнення"""
