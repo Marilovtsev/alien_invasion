@@ -13,3 +13,7 @@ class Button():
         self.button_color = (0, 255, 255)
         self.font = pygame.font.SysFont(None, 48)
 
+        # Будування об'єкту rect кнопки та вирівнювання по центру екрану
+        self.rect = pygame.Rect(0, 0, self.width, self.height)
+        self.rect.center = self.screen_rect.center
+
