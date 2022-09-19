@@ -189,6 +189,10 @@ class AlienInvasion:
             bullet.draw_bullet()
         self.aliens.draw(self.screen)
 
+        # Кнопка Play відображається у тому разі, якщо гра неактивна.
+        if not self.stats.game_active:
+            self.play_button.draw_button()
+
         pygame.display.flip()
 
     def change_fleet_direction(self):
