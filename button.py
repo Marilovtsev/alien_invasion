@@ -9,8 +9,9 @@ class Button():
         self.screen_rect = self.screen.get_rect()
 
         # Встановлення розміру та властивостей кнопок.
-        self.width, self.height = 200, 50  # СКОРІШ ЗА ВСЕ ПОТРІБНІ ДУЖКИ
+        self.width, self.height = (200, 50)  # СКОРІШ ЗА ВСЕ ПОТРІБНІ ДУЖКИ
         self.button_color = (0, 255, 255)
+        self.text_color = (255, 255, 255)
         self.font = pygame.font.SysFont(None, 48)
 
         # Будування об'єкту rect кнопки та вирівнювання по центру екрану
