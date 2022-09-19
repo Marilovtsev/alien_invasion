@@ -32,6 +32,9 @@ class AlienInvasion:
 
         self._create_fleet()
 
+        # Створення кнопки Play.
+        self.play_button = Button(self, "Play")
+
     def run_game(self):
         """Запуск основного циклу гри"""
         while True:
