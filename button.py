@@ -19,7 +19,7 @@ class Button():
         self.rect.center = self.screen_rect.center
 
         # Повідомлення кнопки створюється тільки один раз
-        self.prep_msg(msg)
+        self._prep_msg(msg)
 
     def _prep_msg(self, msg):
         """Перетворює msg в прямокутник та вирівнює текст по центру"""
