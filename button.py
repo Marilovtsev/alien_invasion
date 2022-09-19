@@ -19,3 +19,10 @@ class Button():
 
         # Повідомлення кнопки створюється тільки один раз
         self.prep_msg(msg)
+
+    def _prep_msg(self, msg):
+        """Перетворює msg в прямокутник та вирівнює текст по центру"""
+        self.msg_image = self.font.render(msg, True, self.text_color,
+                                          self.button_color)
+        self.msg_image_rect = self.msg_image.get_rect()
+        self.msg_image_rect.center = self.rect.center
