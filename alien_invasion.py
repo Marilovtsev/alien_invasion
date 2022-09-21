@@ -78,6 +78,9 @@ class AlienInvasion:
             self._create_fleet()
             self.ship.center_ship()
 
+            # Курсор миші вимикається.
+            pygame.mouse.set_visible(False)
+
     def _check_keydown_events(self, event):
         """Реагує на натискання клавіш."""
         if event.key == pygame.K_RIGHT:
