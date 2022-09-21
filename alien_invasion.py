@@ -73,6 +73,10 @@ class AlienInvasion:
             self.aliens.empty()
             self.bullets.empty()
 
+            # Створення нового флоту та розміщення корабля в центрі.
+            self._create_fleet()
+            self.ship.center_ship()
+
     def _check_keydown_events(self, event):
         """Реагує на натискання клавіш."""
         if event.key == pygame.K_RIGHT:
