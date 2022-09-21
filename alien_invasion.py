@@ -69,6 +69,10 @@ class AlienInvasion:
             self.stats.reset_stats()
             self.stats.game_active = True
 
+            # Очищення списків прибульців та снарядів.
+            self.aliens.empty()
+            self.bullets.empty()
+
     def _check_keydown_events(self, event):
         """Реагує на натискання клавіш."""
         if event.key == pygame.K_RIGHT:
