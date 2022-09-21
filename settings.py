@@ -14,7 +14,7 @@ class Settings():
         self.fleet_direction = 1
         # Ship settings
         self.ship_speed = 1.5
-        self.ship_limit = 3
+        self.ship_limit = 2
 
         # Bullet parameters
         self.bullet_speed = 1
