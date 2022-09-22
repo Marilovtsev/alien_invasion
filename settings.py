@@ -33,3 +33,6 @@ class Settings():
         self.ship_speed_factor = 1.5
         self.bullet_speed_factor = 1.0
         self.alien_speed = 0.5
+
+        # fleet_direction = 1 означає рух вправо, а -1 - вліво.
+        self.fleet_direction = 1
