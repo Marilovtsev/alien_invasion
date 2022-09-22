@@ -32,7 +32,13 @@ class Settings():
         """Ініціалізує налаштування, які змінюються під час гри."""
         self.ship_speed_factor = 1.5
         self.bullet_speed_factor = 1.0
-        self.alien_speed = 0.5
+        self.alien_speed_factor = 0.5
 
         # fleet_direction = 1 означає рух вправо, а -1 - вліво.
         self.fleet_direction = 1
+
+    def increase_speed(self):
+        """Збільшує налатшування швидкості."""
+        self.ship_speed_factor *= self.speedup_scale
+        self.bullet_speed_factor *= self.speedup_scale
+        self.alien_speed_factor *= self.speedup_scale
