@@ -11,11 +11,6 @@ class Settings():
         self.alien_speed = 0.5
         self.fleet_drop_speed = 10
 
-        # Темп прискорення гри
-        self.speedup_scale = 1.1
-
-        self.initialize_dynamic_settings()
-
         # fleet direction = 1 означає рух вправо; f -1 - вліво
         self.fleet_direction = 1
         # Ship settings
@@ -24,15 +19,21 @@ class Settings():
 
         # Bullet parameters
         self.bullet_speed = 1
-        self.bullet_width = 3
+        self.bullet_width = 100
         self.bullet_height = 15
         self.bullet_color = (50, 50, 150)
+
+        # Темп прискорення гри
+        self.speedup_scale = 5
+
+        self.initialize_dynamic_settings()
+
 
     def initialize_dynamic_settings(self):
         """Ініціалізує налаштування, які змінюються під час гри."""
         self.ship_speed_factor = 1.5
-        self.bullet_speed_factor = 1.0
-        self.alien_speed_factor = 0.5
+        self.bullet_speed_factor = 3.0
+        self.alien_speed_factor = 1.0
 
         # fleet_direction = 1 означає рух вправо, а -1 - вліво.
         self.fleet_direction = 1
