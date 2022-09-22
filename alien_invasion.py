@@ -128,6 +128,7 @@ class AlienInvasion:
             # Знищення існуючих снарядів та створення нового флоту
             self.bullets.empty()
             self._create_fleet()
+            self.settings.increase_speed()
 
     def _update_aliens(self):
         """Оновлює позиції усіх прибульців у флоті"""
