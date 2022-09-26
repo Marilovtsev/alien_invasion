@@ -9,3 +9,7 @@ class Scoreboard():
         self.screen_rect = self.screen.get_rect()
         self.settings = ai_game.settings
         self.stats = ai_game.stats
+
+        #Налаштування шрифту для вивода рахунку
+        self.text_color = (30, 30, 30)
+        self.font = pygame.font.SysFont(None, 40)
