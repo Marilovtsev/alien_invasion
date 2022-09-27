@@ -8,18 +8,13 @@ class Settings:
         self.screen_height = 800
         self.bg_color = (0, 30, 80)
         self.bullet_allowed = 3
-        self.alien_speed = 0.5
         self.fleet_drop_speed = 10
 
-        # fleet direction = 1 означає рух вправо; f -1 - вліво
-        self.fleet_direction = 1
         # Ship settings
-        self.ship_speed = 1.5
         self.ship_limit = 2
 
         # Bullet parameters
-        self.bullet_speed = 1
-        self.bullet_width = 300
+        self.bullet_width = 3
         self.bullet_height = 15
         self.bullet_color = (50, 50, 150)
 
@@ -32,9 +27,9 @@ class Settings:
 
     def initialize_dynamic_settings(self):
         """Ініціалізує налаштування, які змінюються під час гри."""
-        self.ship_speed_factor = 1.5
-        self.bullet_speed_factor = 1
-        self.alien_speed_factor = 0.5
+        self.ship_speed = 1.5
+        self.bullet_speed = 1
+        self.alien_speed = 0.5
 
         # Підрахунок поінтів
         self.alien_points = 50
@@ -44,9 +39,9 @@ class Settings:
 
     def increase_speed(self):
         """Збільшує налатшування швидкості."""
-        self.ship_speed_factor *= self.speedup_scale
-        self.bullet_speed_factor *= self.speedup_scale
-        self.alien_speed_factor *= self.speedup_scale
+        self.ship_speed *= self.speedup_scale
+        self.bullet_speed *= self.speedup_scale
+        self.alien_speed *= self.speedup_scale
 
         self.alien_points = int(self.alien_points * self.score_scale)
 
