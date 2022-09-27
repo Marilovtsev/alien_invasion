@@ -217,6 +217,8 @@ class AlienInvasion:
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         self.aliens.draw(self.screen)
+        #Вивід інфо про рахунок
+        self.sb.show_score()
 
         # Кнопка Play відображається у тому разі, якщо гра неактивна.
         if not self.stats.game_active:
