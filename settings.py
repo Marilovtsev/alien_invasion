@@ -19,7 +19,7 @@ class Settings:
 
         # Bullet parameters
         self.bullet_speed = 1
-        self.bullet_width = 1
+        self.bullet_width = 1000
         self.bullet_height = 15
         self.bullet_color = (50, 50, 150)
 
@@ -31,8 +31,8 @@ class Settings:
     def initialize_dynamic_settings(self):
         """Ініціалізує налаштування, які змінюються під час гри."""
         self.ship_speed_factor = 1.5
-        self.bullet_speed_factor = 3.0
-        self.alien_speed_factor = 1.0
+        self.bullet_speed_factor = 1
+        self.alien_speed_factor = 0.5
 
         # Підрахунок поінтів
         self.alien_points = 50
