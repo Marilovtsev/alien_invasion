@@ -74,6 +74,7 @@ class AlienInvasion:
             # Скіп ігрової статистики
             self.stats.reset_stats()
             self.stats.game_active = True
+            self.sb.prep_score()
 
             # Очищення списків прибульців та снарядів.
             self.aliens.empty()
