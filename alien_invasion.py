@@ -129,6 +129,10 @@ class AlienInvasion:
                                                 self.aliens,
                                                 True, True)
 
+        if collisions:
+            self.stats.score += self.settings.alien_points
+            self.sb.prep_score()
+
         if not self.aliens:
             # Знищення існуючих снарядів та створення нового флоту
             self.bullets.empty()
@@ -148,7 +152,7 @@ class AlienInvasion:
         self._check_aliens_bottom()
 
     def _ship_hit(self):
-        """Обробляємозіткнення коробля з прибульцем."""
+        """Обробляємо зіткнення коробля з прибульцем."""
         if self.stats.ships_left > 0:
             # Зменшення ship_left.
             self.stats.ships_left -= 1
