@@ -19,12 +19,14 @@ class Settings:
 
         # Bullet parameters
         self.bullet_speed = 1
-        self.bullet_width = 1
+        self.bullet_width = 1000
         self.bullet_height = 15
         self.bullet_color = (50, 50, 150)
 
         # Темп прискорення гри
-        self.speedup_scale = 5
+        self.speedup_scale = 1.1
+        # Темп зросту вартості прибульців
+        self.score_scale = 1.5
 
         self.initialize_dynamic_settings()
 
@@ -45,3 +47,5 @@ class Settings:
         self.ship_speed_factor *= self.speedup_scale
         self.bullet_speed_factor *= self.speedup_scale
         self.alien_speed_factor *= self.speedup_scale
+
+
