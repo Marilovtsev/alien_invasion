@@ -131,7 +131,8 @@ class AlienInvasion:
                                                 True, True)
 
         if collisions:
-            self.stats.score += self.settings.alien_points
+            for aliens in collisions.values():
+                self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
 
         if not self.aliens:
@@ -222,7 +223,7 @@ class AlienInvasion:
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         self.aliens.draw(self.screen)
-        #Вивід інфо про рахунок
+        # Вивід інфо про рахунок
         self.sb.show_score()
 
         # Кнопка Play відображається у тому разі, якщо гра неактивна.
