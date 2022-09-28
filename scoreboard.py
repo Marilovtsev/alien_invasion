@@ -14,8 +14,9 @@ class Scoreboard():
         # Налаштування шрифту для вивода рахунку
         self.text_color = (30, 30, 30)
         self.font = pygame.font.SysFont(None, 40)
-        # Підготовка початкового зображення
+        # Підготовка зображення рахунків
         self.prep_score()
+        self.prep_high_score()
 
     def prep_score(self):
         """Преобразує нинішній рахунок у графічне зображення"""
