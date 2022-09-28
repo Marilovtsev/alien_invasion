@@ -30,6 +30,14 @@ class Scoreboard():
         self.score_rect.right = self.screen_rect.right - 20
         self.score_rect.top = 20
 
+    def prep_high_score(self):
+        """Преобразує рекордний рахунок у графічне зображення"""
+        high_score = round(self.stats.high_score, -1)
+        high_score_str = "{:,}".format(high_score)
+        self.high_score_image = self.font.render(high_score_str, True,
+                                self.text_color, self.ai_settings.bg_color)
+
+
     def show_score(self):
         """Виводить рахунок на екран"""
         self.screen.blit(self.score_image, self.score_rect)
