@@ -53,6 +53,11 @@ class Scoreboard():
         self.level_image = self.font.render(level_str, True,
                                             self.text_color, self.settings.bg_color)
 
+        # Рівень виводиться під актуальним рахунком.
+        self.level_rect = self.level_image.get_rect()
+        self.level_rect.right = self.score_rect.right
+        self.level_rect.top = self.score_rect.bottom + 10
+
     def show_score(self):
         """Виводить рахунок на екран"""
         self.screen.blit(self.score_image, self.score_rect)
