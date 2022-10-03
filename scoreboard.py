@@ -23,7 +23,6 @@ class Scoreboard():
         self.prep_high_score()
         self.prep_level()
 
-
     def prep_score(self):
         """Преобразує нинішній рахунок у графічне зображення"""
         rounded_score = round(self.stats.score, -1)
@@ -41,7 +40,7 @@ class Scoreboard():
         high_score = round(self.stats.high_score, -1)
         high_score_str = "{:,}".format(high_score)
         self.high_score_image = self.font.render(high_score_str, True,
-                                                 self.text_color, self. settings.bg_color)
+                                                 self.text_color, self.settings.bg_color)
 
         # Рекорд вирівнюється по центру верхньої сторони
         self.high_score_rect = self.high_score_image.get_rect()
