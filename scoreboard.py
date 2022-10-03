@@ -47,6 +47,12 @@ class Scoreboard():
         self.high_score_rect.centerx = self.screen_rect.centerx
         self.high_score_rect.top = self.score_rect.top
 
+    def prep_level(self):
+        """Перетворює рівень в графічне зображення"""
+        level_str = str(self.stats.level)
+        self.level_image = self.font.render(level_str, True,
+                                            self.text_color, self.settings.bg_color)
+
     def show_score(self):
         """Виводить рахунок на екран"""
         self.screen.blit(self.score_image, self.score_rect)
@@ -57,3 +63,5 @@ class Scoreboard():
         if self.stats.score > self.stats.high_score:
             self.stats.high_score = self.stats.score
             self.prep_high_score()
+
+
