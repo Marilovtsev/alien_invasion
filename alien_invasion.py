@@ -142,6 +142,10 @@ class AlienInvasion:
             self._create_fleet()
             self.settings.increase_speed()
 
+            # Збільшення рівня
+            self.stats.level += 1
+            self.sb.prep_level()
+
     def _update_aliens(self):
         """Оновлює позиції усіх прибульців у флоті"""
         self._check_fleet_edges()
