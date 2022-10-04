@@ -62,12 +62,11 @@ class Scoreboard():
     def prep_ships(self):
         """Повідомляє кількість залишившихся кораблей"""
         self.ships = Group()
-        for ship_number in range (self.stats.ships_left):
+        for ship_number in range(self.stats.ships_left):
             ship = Ship(self.ai_game)
             ship.rect.x = 10 + ship_number * ship.rect.width
             ship.rect.y = 10
             self.ships.add(ship)
-
 
     def show_score(self):
         """Виводить актуальний рахунок, рекорд та кількість залишившися кораблей"""
@@ -80,5 +79,3 @@ class Scoreboard():
         if self.stats.score > self.stats.high_score:
             self.stats.high_score = self.stats.score
             self.prep_high_score()
-
-
